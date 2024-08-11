@@ -12,7 +12,7 @@ public static void printPattern(int n)
 {  
 //detrmines the boundary size of the array  
 int size = 2 * n - 1;  
-//inner loop  
+//inner loop test 12 
 for(int i = 1; i <= size; i++)  
 {  
 //outer loop      
