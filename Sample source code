@@ -1,16 +1,40 @@
-monolithic-app/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/monolith/
-│   │   │       ├── MonolithicApplication.java
-│   │   │       ├── controller/
-│   │   │       │   └── ProductController.java
-│   │   │       ├── model/
-│   │   │       │   └── Product.java
-│   │   │       └── repository/
-│   │   │           └── ProductRepository.java
-│   │   └── resources/
-│   │       └── application.properties
-├── pom.xml
-└── README.md
+pipeline {
+    agents any
+    Tools:
+
+    Stages {
+        Stage1 ('hello') {
+            Steps {
+                ("echo command in stage1")
+            }
+        }
+    }
+    Stages {
+        Stage2 ('build') {
+            Steps {
+                ("echo command in stage2")
+            }
+        }
+    }
+    Stages {
+        Stage3 ('test') {
+            Steps {
+                ("echo command in stage3")
+            }
+        }
+    }
+    post {
+        success{
+        // only execute this block if the tests pass
+        echo 'Tests pass through successfully'
+    }
+    failure {
+        // Execute this block if the tests fail
+        echo 'Tests failed'
+    }
+    always {
+        // Archieve tests reports
+        echo 'I will always run'
+    }
+}
+}
