@@ -1,0 +1,16 @@
+monolithic-app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/monolith/
+│   │   │       ├── MonolithicApplication.java
+│   │   │       ├── controller/
+│   │   │       │   └── ProductController.java
+│   │   │       ├── model/
+│   │   │       │   └── Product.java
+│   │   │       └── repository/
+│   │   │           └── ProductRepository.java
+│   │   └── resources/
+│   │       └── application.properties
+├── pom.xml
+└── README.md
